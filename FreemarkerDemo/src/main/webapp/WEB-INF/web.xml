@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>OA_SSM</display-name>
+ 
+  <!--处理乱码的过滤器-->
+ <!-- springmvc核心转发器 -->
+ <servlet>
+ 	<servlet-name>springmvc</servlet-name>
+ 	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+ 	<!-- 指定springMVC的配置文件  默认WEB-INF/<servlet-name>-servlet.xml  -->
+ 	<init-param>
+ 		<param-name>contextConfigLocation</param-name>
+ 		<param-value>classpath:spring/springmvc-servlet.xml</param-value>
+ 	</init-param>
+ </servlet>
+ <servlet-mapping>
+ 	<servlet-name>springmvc</servlet-name>
+ 	<url-pattern>/</url-pattern><!-- 以前：  del?id=1  restFul：del/1   -->
+ </servlet-mapping>
+</web-app>
